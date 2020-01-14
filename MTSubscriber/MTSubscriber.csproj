@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-MTSubscriber-1DD1A230-D742-4058-ACD2-FDED1DB1A252</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="6.0.0" />
+    <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="6.0.0" />
+    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MTCommonContract\MTCommonContract.csproj" />
+  </ItemGroup>
+</Project>

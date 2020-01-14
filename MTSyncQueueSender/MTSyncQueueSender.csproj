@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-MTSyncQueueSender-064104E7-0B97-4017-9B52-CDBA31AB1865</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="6.0.0" />
+    <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="6.0.0" />
+    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MTCommonContract\MTCommonContract.csproj" />
+  </ItemGroup>
+</Project>

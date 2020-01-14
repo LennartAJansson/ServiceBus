@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "MTPublisher": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
