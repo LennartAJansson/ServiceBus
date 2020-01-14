@@ -13,25 +13,22 @@ namespace BasicQueueListener
         const string QueueName = "kalle";
         static IQueueClient queueClient;
 
-        static void Main(string[] args)
-        {
-            MainAsync().GetAwaiter().GetResult();
-        }
-
-        static async Task MainAsync()
+        static async Task Main(string[] args)
         {
             Console.WriteLine("======================================================");
             Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
             Console.WriteLine("======================================================");
 
             queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-            RegisterOnMessageHandlerAndReceiveMessages();
+
+            RegisterMessageHandler();
 
             Console.ReadKey();
+
             await queueClient.CloseAsync();
         }
 
-        static void RegisterOnMessageHandlerAndReceiveMessages()
+        static void RegisterMessageHandler()
         {
             var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
             {

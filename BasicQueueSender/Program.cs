@@ -14,20 +14,17 @@ namespace BasicQueueSender
 
         static async Task Main(string[] args)
         {
-            const int numberOfMessages = 10;
-            queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
             Console.WriteLine("======================================================");
             Console.WriteLine("Press ENTER key to exit after sending all the messages.");
             Console.WriteLine("======================================================");
 
+            const int numberOfMessages = 10;
+            queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
             await SendMessagesAsync(numberOfMessages);
 
             Console.ReadKey();
 
             await queueClient.CloseAsync();
-
-            Console.WriteLine("Hello World!");
         }
 
         static async Task SendMessagesAsync(int numberOfMessagesToSend)

@@ -23,6 +23,7 @@ namespace BasicPublisher
             await SendMessagesAsync(numberOfMessages);
 
             Console.ReadKey();
+
             await topicClient.CloseAsync();
         }
 

@@ -16,20 +16,20 @@ namespace BasicSubscriber
 
         public static async Task Main(string[] args)
         {
-            subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);
-
             Console.WriteLine("======================================================");
             Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
             Console.WriteLine("======================================================");
 
-            RegisterOnMessageHandlerAndReceiveMessages();
+            subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);
+
+            RegisterMessageHandler();
 
             Console.ReadKey();
 
             await subscriptionClient.CloseAsync();
         }
 
-        static void RegisterOnMessageHandlerAndReceiveMessages()
+        static void RegisterMessageHandler()
         {
             var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
             {
